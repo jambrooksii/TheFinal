@@ -8,16 +8,16 @@ import java.util.ArrayList;
 @Component
 public class CharacterWrapper {
 
-    ArrayList<CharacterResults> results = new ArrayList<>();
+    ArrayList<CharactersData> results = new ArrayList<>();
 
     @JsonProperty("results")
-    public ArrayList<CharacterResults> getResults() {
+    public ArrayList<CharactersData> getResults() {
         return results;
     }
 
 
     @JsonProperty("results")
-    public void setResults(ArrayList<CharacterResults> results) {
+    public void setResults(ArrayList<CharactersData> results) {
         this.results = results;
     }
 }

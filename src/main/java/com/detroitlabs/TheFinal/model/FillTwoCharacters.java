@@ -1,11 +1,8 @@
 package com.detroitlabs.TheFinal.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.stereotype.Component;
 
-@Component
-public class CharacterResults {
-
+public class FillTwoCharacters {
     private String Name;
     private String characterHeight;
     private String characterMass;
@@ -15,7 +12,18 @@ public class CharacterResults {
     private String characterGender;
     private String characterHomeTown;
     private String characterFilms;
+    private String url;
 
+
+    @JsonProperty("url")
+    public String getUrl() {
+        return url;
+    }
+
+    @JsonProperty("url")
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     @JsonProperty("name")
     public String getName() {

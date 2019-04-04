@@ -1,23 +1,26 @@
 package com.detroitlabs.TheFinal.controller;
 
 
-import com.detroitlabs.TheFinal.model.CharacterResults;
+import com.detroitlabs.TheFinal.model.CharactersData;
 import com.detroitlabs.TheFinal.model.CharacterWrapper;
+import com.detroitlabs.TheFinal.model.FillTwoCharacters;
+import com.detroitlabs.TheFinal.model.FilmWrapper;
 import com.detroitlabs.TheFinal.service.CharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 
+@Controller
 public class CharacterController {
 
     @Autowired
     CharacterWrapper characterWrapper;
 
     @Autowired
-    CharacterResults characterResults;
+    CharactersData characterResults;
 
     @Autowired
     CharacterService characterService;
@@ -25,14 +28,39 @@ public class CharacterController {
 
 
 
-    @RequestMapping("/home")
+
+
+
+
+
+    @RequestMapping("/")
+
     public String testHomePage(ModelMap modelMap){
-        CharacterWrapper characterWrapper = characterService.getAllCharacter();
-        ArrayList<CharacterResults> characterResults = characterWrapper.getResults();
-        modelMap.put("characterResults", characterResults);
+FilmWrapper filmWrapper = characterService.geFilmTwo();
+modelMap.put("StarWars2",filmWrapper );
 
+        ArrayList<String> movieTwoCharacters = new ArrayList<>();
 
+        for (String character : filmWrapper.getCharactersData()) {
+            movieTwoCharacters.add(character);
+        }
 
-        return "home";
+        modelMap.put("Character", movieTwoCharacters);
+
+        ArrayList<FillTwoCharacters> fillTwoCharacters = new ArrayList<>();
+
+        for (String character2: movieTwoCharacters) {
+            fillTwoCharacters.add(characterService.filltwoCharacters(character2));
+        }
+
+        for (int i = 0; i < movieTwoCharacters.size() ; i++) {
+            fillTwoCharacters.get(i).setUrl(movieTwoCharacters.get(i));
+        }
+
+        ArrayList<FillTwoCharacters> movieCharacterObjects =
+
+  return "home";
     }
+
+
 }

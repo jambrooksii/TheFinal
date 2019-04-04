@@ -6,10 +6,19 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="product" th:each="${Character : ${characterDetails}}">
+
+    <div class="product" th:each="Character : ${charactersData}">
         <h2 class="character_name" th:text="${Character.getName()}"></h2>
     </div>
-</div>
+
+
+
+
+    <div class="product" th:each="Film : ${filmWrapper}">
+        <h2 th:text="${Film.getTitle()}"></h2>
+        <h2 th:text="${Film.getCharacters()}"></h2>
+    </div>
+
+<h2>Hello</h2>
 </body>
 </html>
