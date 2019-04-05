@@ -2,8 +2,6 @@ package com.detroitlabs.TheFinal.controller;
 
 
 import com.detroitlabs.TheFinal.CharacterSet;
-import com.detroitlabs.TheFinal.model.CharactersData;
-import com.detroitlabs.TheFinal.model.CharacterWrapper;
 import com.detroitlabs.TheFinal.model.FilmTwoCharacters;
 import com.detroitlabs.TheFinal.service.CharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +15,6 @@ import java.util.ArrayList;
 @Controller
 public class CharacterController {
 
-    @Autowired
-    CharacterWrapper characterWrapper;
-
-    @Autowired
-    CharactersData characterResults;
 
     @Autowired
     CharacterService characterService;
@@ -49,6 +42,7 @@ public class CharacterController {
     public String characterData(@PathVariable String name, ModelMap modelMap){
         FilmTwoCharacters filmTwoCharacters = characterSet.findByName(name);
         modelMap.put("filmTwoCharacters", filmTwoCharacters);
+        return "new";
 }
 
 

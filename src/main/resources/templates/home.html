@@ -7,11 +7,11 @@
 <body>
 
 
-    <div th:each="Characters : ${fillTwoCharacters}">
-        <form action="indexes.html" method="get">
-            <input th:value="${Characters.name}" type="submit">
-            <input name="url" th:value="${Characters.url}" type="hidden"/>
-        </form>
+    <div th:each="Characters : ${filmTwoCharacters}">
+        <h2 th:text="${Characters.getName()}"></h2>
+        <a th:href="@{'/new/' + ${Characters.name}}" class="button">Read Character Details</a>
+
+
     </div>
 
 

@@ -17,7 +17,7 @@ public class CharacterSet {
     @Autowired
     FilmTwoCharacters filmTwoCharacters;
 
-    public ArrayList<FilmTwoCharacters> filmCharacter;
+    public ArrayList<FilmTwoCharacters> filmCharacter = new ArrayList<>();
 
 
     public ArrayList<FilmTwoCharacters> getFilmCharacters() {

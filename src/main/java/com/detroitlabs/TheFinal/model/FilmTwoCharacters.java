@@ -1,7 +1,9 @@
 package com.detroitlabs.TheFinal.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.stereotype.Component;
 
+@Component
 public class FilmTwoCharacters {
     private String Name;
     private String characterHeight;
@@ -11,7 +13,6 @@ public class FilmTwoCharacters {
     private String characterBirthYear;
     private String characterGender;
     private String characterHomeTown;
-    private String characterFilms;
     private String url;
 
 
@@ -102,25 +103,17 @@ public class FilmTwoCharacters {
     }
 
 
-    @JsonProperty("home_town")
+    @JsonProperty("homeworld")
     public String getCharacterHomeTown() {
         return characterHomeTown;
     }
 
-    @JsonProperty("home_town")
+    @JsonProperty("homeworld")
     public void setCharacterHomeTown(String characterHomeTown) {
         this.characterHomeTown = characterHomeTown;
     }
 
-    @JsonProperty("films")
-    public String getCharacterFilms() {
-        return characterFilms;
-    }
 
-    @JsonProperty("films")
-    public void setCharacterFilms(String characterFilms) {
-        this.characterFilms = characterFilms;
-    }
 
     @Override
     public String toString() {
@@ -133,7 +126,6 @@ public class FilmTwoCharacters {
                 ", characterBirthYear='" + characterBirthYear + '\'' +
                 ", characterGender='" + characterGender + '\'' +
                 ", characterHomeTown='" + characterHomeTown + '\'' +
-                ", characterFilms='" + characterFilms + '\'' +
                 '}';
     }
 }

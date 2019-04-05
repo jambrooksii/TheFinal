@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<h2>come on</h2>
+
+<h2 th:text="'Name =' + ${filmTwoCharacters.name}" >Name</h2>
+<h2 th:text="'Height =' + ${filmTwoCharacters.characterHeight}" > Height</h2>
+<h2 th:text="'Weight = ' + ${filmTwoCharacters.characterMass}" > Weight</h2>
+<h2 th:text="'Hair Color = ' + ${filmTwoCharacters.characterHairColor}" >Hair Color</h2>
+<h2 th:text="'Eye Color = ' + ${filmTwoCharacters.characterEyeColor}" >Eye Color</h2>
+<h2 th:text="'Birthday =' + ${filmTwoCharacters.characterBirthYear}" >Birthday</h2>
+<h2 th:text="'Home Town =' + ${filmTwoCharacters.characterHomeTown}" >Home Town</h2>
 </body>
 </html>
