@@ -2,7 +2,7 @@ package com.detroitlabs.TheFinal.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class FillTwoCharacters {
+public class FilmTwoCharacters {
     private String Name;
     private String characterHeight;
     private String characterMass;

@@ -11,10 +11,13 @@ public class FilmWrapper {
 
 private List<String> charactersData;
 
+
+@JsonProperty("characters")
     public List<String> getCharactersData() {
         return charactersData;
     }
 
+    @JsonProperty("characters")
     public void setCharactersData(List<String> charactersData) {
         this.charactersData = charactersData;
     }

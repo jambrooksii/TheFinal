@@ -7,8 +7,11 @@
 <body>
 
 
-    <div class="product" th:each="Character : ${charactersData}">
-        <h2 class="character_name" th:text="${Character.getName()}"></h2>
+    <div th:each="Characters : ${fillTwoCharacters}">
+        <form action="indexes.html" method="get">
+            <input th:value="${Characters.name}" type="submit">
+            <input name="url" th:value="${Characters.url}" type="hidden"/>
+        </form>
     </div>
 
 

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Component
-public class CharactersData extends ArrayList<FillTwoCharacters> {
+public class CharactersData extends ArrayList<FilmTwoCharacters> {
 
 
 }
